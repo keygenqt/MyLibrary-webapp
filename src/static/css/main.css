@@ -11,6 +11,8 @@ body, html, #root {
     height: 100%;
     width: 100%;
     display: table;
+    min-width: 1200px;
+    min-height: 680px;
 }
 
 /*Menu*/
