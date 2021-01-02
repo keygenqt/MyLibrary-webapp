@@ -1,0 +1,57 @@
+{
+  "name": "mylibrary",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.8",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.6.0",
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "wait-on": "^5.2.1",
+    "web-vitals": "^0.2.4"
+  },
+  "devDependencies": {
+    "electron-builder": "^22.9.1",
+    "electron": "^11.1.1",
+    "electron-is-dev": "^1.2.0"
+  },
+  "scripts": {
+    "react-start": "PORT=3001 react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test --env=jsdom",
+    "react-eject": "react-scripts eject",
+    "electron-build": "electron-builder",
+    "release": "npm run react-build && electron-builder --publish=always",
+    "build": "npm run react-build && npm run electron-build",
+    "start": "concurrently \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:3001 && electron .\""
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "description": "MyLibrary is an application for cataloging your books library.",
+  "author": "Vitaliy Zarubin",
+  "build": {
+    "appId": "com.mylibraryapp"
+  },
+  "main": "public/electron.js",
+  "homepage": "./"
+}
