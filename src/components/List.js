@@ -1,7 +1,20 @@
+import ListBookItem from "../components/ListBookItem";
+
 function List() {
     return (
         <div className="List">
-            List
+            <ListBookItem/>
+            <ListBookItem/>
+            <ListBookItem/>
+            <ListBookItem/>
+            <ListBookItem/>
+            <ListBookItem/>
+            <ListBookItem/>
+            <ListBookItem/>
+            <ListBookItem/>
+            <ListBookItem/>
+            <ListBookItem/>
+            <ListBookItem/>
         </div>
     );
 }

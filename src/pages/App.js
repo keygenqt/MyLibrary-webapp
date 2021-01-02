@@ -1,6 +1,6 @@
 import Menu from "../components/Menu";
 import List from "../components/List";
-import Search from "../components/Search";
+import SearchBlock from "../components/SearchBlock";
 import BookView from "./BookView";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
             </div>
             <div className="ListBlock">
                 <div className="ListSearch">
-                    <Search/>
+                    <SearchBlock/>
                 </div>
                 <div className="ListContent">
                     <List/>

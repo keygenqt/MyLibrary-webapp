@@ -1,48 +1,221 @@
+/*add google font*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap');
+
 /*App*/
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
 body, html, #root {
     padding: 0;
     margin: 0;
-    background: #363f47;
     height: 100%;
     width: 100%;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .App {
-    height: 100%;
-    width: 100%;
     display: table;
     min-width: 1200px;
     min-height: 680px;
+    height: 100%;
+    width: 100%;
+    background: #87909859;
 }
 
 /*Menu*/
 .MenuBlock {
-    background: red;
+    background: #363f47;
     height: 100%;
-    width: 80px;
-    display: table-cell;
+    width: 90px;
+    display: block;
     vertical-align: top;
+    position: fixed;
+    z-index: 99;
+}
+
+.MenuBlock .Menu {
+    height: 100%;
+}
+
+.MenuBlock ul {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100%;
+}
+
+.MenuBlock ul li {
+    display: block;
+    text-align: center;
+}
+
+.MenuBlock ul li a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 20px 0;
+}
+
+.MenuBlock ul li.active a {
+    background: #ffffff29;
+}
+
+.MenuBlock ul li a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.MenuBlock ul li span {
+    display: block;
+    color: white;
+    padding-top: 5px;
+}
+
+.MenuBlock ul li.bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.54);
 }
 
 /*List*/
 .ListBlock {
-    background: gray;
     display: table-cell;
     min-width: 400px;
-    max-width: 600px;
-    width: 30%;
+    max-width: 710px;
+    width: 40%;
     vertical-align: top;
+    padding: 20px 20px 20px 110px;
+}
+
+/*ListBookItem*/
+.ListBookItem {
+    display: block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+    vertical-align: top;
+    background: #363f47;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-size: 0;
+}
+
+.ListBookItem:hover {
+    cursor: pointer;
+}
+
+.ListBookItem .image {
+    border-radius: 6px;
+    vertical-align: top;
+    margin: 10px;
+    position: relative;
+    width: 86px;
+    height: 130px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: inline-block;
+}
+
+.ListBookItem .data-block {
+    font-size: 14px;
+    width: calc(100% - 110px);
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px 10px 10px 0;
+}
+
+.ListBookItem .data-block .name {
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ListBookItem .data-block .author {
+    font-size: 12px;
+    padding: 10px 0;
+}
+
+.ListBookItem .data-block .desc {
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 
 /*ListSearch*/
-.ListBlock .ListSearch {
-    background: wheat;
-    height: 100px;
+.ListBlock .ListSearch ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #ffffff73;
+    opacity: 1;
+}
+
+.ListBlock .ListSearch :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #ffffff73;
+}
+
+.ListBlock .ListSearch ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #ffffff73;
+}
+
+.ListBlock .ListSearch .search-block {
+    position: relative;
+}
+
+.ListBlock .ListSearch .search-block svg {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.ListBlock .ListSearch .search-input {
+    border: 1px solid #cccccc80;
+    font-size: 18px;
+    width: 100%;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background: #363f47;
+    padding: 10px 45px 10px 15px;
+    color: white;
+}
+
+.ListBlock .ListSearch .search-input:focus {
+    outline: none;
+    border: 1px solid #ccccccc9;
+}
+
+.ListBlock .ListSearch .search-chips {
+    text-align: right;
+    margin: 0 -5px 0 0;
+    padding: 20px 0;
+}
+
+.ListBlock .ListSearch .search-chips li {
+    display: inline-block;
+}
+
+.ListBlock .ListSearch .search-chips li a {
+    text-decoration: none;
+    background: #363f47;
+    color: white;
+    padding: 3px 10px;
+    margin: 5px;
+    border-radius: 16px;
+    font-weight: 200;
+    font-size: 14px;
 }
 
 /*ListContent*/
 .ListBlock .ListContent {
-    background: green;
     height: calc(100% - 100px);
 }
 
