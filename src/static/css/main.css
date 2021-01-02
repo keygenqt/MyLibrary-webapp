@@ -1,0 +1,52 @@
+/*App*/
+body, html, #root {
+    padding: 0;
+    margin: 0;
+    background: #363f47;
+    height: 100%;
+    width: 100%;
+}
+
+.App {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+
+/*Menu*/
+.MenuBlock {
+    background: red;
+    height: 100%;
+    width: 80px;
+    display: table-cell;
+    vertical-align: top;
+}
+
+/*List*/
+.ListBlock {
+    background: gray;
+    display: table-cell;
+    min-width: 400px;
+    max-width: 600px;
+    width: 30%;
+    vertical-align: top;
+}
+
+/*ListSearch*/
+.ListBlock .ListSearch {
+    background: wheat;
+    height: 100px;
+}
+
+/*ListContent*/
+.ListBlock .ListContent {
+    background: green;
+    height: calc(100% - 100px);
+}
+
+/*AppContent*/
+.AppContent {
+    display: table-cell;
+    background: white;
+    vertical-align: top;
+}
