@@ -4,27 +4,27 @@ function Menu() {
     return (
         <div className="Menu">
             <ul>
-                <li>
+                <li className='active'>
                     <a href='/'>
-                        <LocalLibrary style={{ color: 'white' }} />
+                        <LocalLibrary/>
                         <span>MyLibrary</span>
                     </a>
                 </li>
                 <li>
                     <a href='/'>
-                        <Settings style={{ color: 'white' }} />
+                        <Settings/>
                         <span>Settings</span>
                     </a>
                 </li>
-                <li className='active'>
+                <li>
                     <a href='/'>
-                        <Info style={{ color: 'white' }} />
+                        <Info/>
                         <span>About</span>
                     </a>
                 </li>
                 <li className='bottom'>
                     <a href='/'>
-                        <ExitToApp style={{ color: 'white' }} />
+                        <ExitToApp/>
                         <span>Logout</span>
                     </a>
                 </li>

@@ -7,32 +7,49 @@
     outline: none;
 }
 
+::-webkit-scrollbar {
+    width: 14px;
+    height: 18px;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 6px;
+    border: 3px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    -webkit-border-radius: 6px;
+    background-color: #2a2c52;
+}
+
+::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
 body, html, #root {
     padding: 0;
     margin: 0;
     height: 100%;
     width: 100%;
     font-family: 'Open Sans', sans-serif;
+    overflow-y: hidden;
 }
 
 .App {
-    display: table;
     min-width: 1200px;
     min-height: 680px;
     height: 100%;
     width: 100%;
-    background: #87909859;
+    background: #5759a0;
 }
 
 /*Menu*/
 .MenuBlock {
-    background: #363f47;
+    background: #383a6d;
     height: 100%;
     width: 90px;
-    display: block;
+    display: inline-block;
     vertical-align: top;
-    position: fixed;
-    z-index: 99;
 }
 
 .MenuBlock .Menu {
@@ -51,6 +68,11 @@ body, html, #root {
     text-align: center;
 }
 
+.MenuBlock ul li span,
+.MenuBlock ul li svg {
+    color: rgb(151 152 208);
+}
+
 .MenuBlock ul li a {
     display: block;
     text-align: center;
@@ -60,7 +82,7 @@ body, html, #root {
 }
 
 .MenuBlock ul li.active a {
-    background: #ffffff29;
+    background: #5759a0;
 }
 
 .MenuBlock ul li a {
@@ -72,8 +94,12 @@ body, html, #root {
 
 .MenuBlock ul li span {
     display: block;
-    color: white;
     padding-top: 5px;
+}
+
+.MenuBlock ul li.active span,
+.MenuBlock ul li.active svg {
+    color: #ffffff;
 }
 
 .MenuBlock ul li.bottom {
@@ -81,17 +107,21 @@ body, html, #root {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.54);
+    background: #323465;
 }
 
 /*List*/
 .ListBlock {
-    display: table-cell;
-    min-width: 400px;
-    max-width: 710px;
-    width: 40%;
+    width: 380px;
     vertical-align: top;
-    padding: 20px 20px 20px 110px;
+    padding: 20px;
+    display: inline-block;
+    height: 100%;
+    overflow: hidden;
+}
+
+.ListBlock:hover {
+    overflow-y: overlay;
 }
 
 /*ListBookItem*/
@@ -100,9 +130,9 @@ body, html, #root {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width: 100%;
     vertical-align: top;
-    background: #363f47;
+    background: #383a6d;
     color: white;
-    margin-bottom: 20px;
+    margin-top: 20px;
     border-radius: 6px;
     font-size: 0;
 }
@@ -151,6 +181,7 @@ body, html, #root {
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+    color: rgb(151 152 208);
 }
 
 /*ListSearch*/
@@ -178,12 +209,12 @@ body, html, #root {
 }
 
 .ListBlock .ListSearch .search-input {
-    border: 1px solid #cccccc80;
+    border: 1px solid #393b70;
     font-size: 18px;
     width: 100%;
     border-radius: 6px;
     box-sizing: border-box;
-    background: #363f47;
+    background: #393b70;
     padding: 10px 45px 10px 15px;
     color: white;
 }
@@ -205,23 +236,159 @@ body, html, #root {
 
 .ListBlock .ListSearch .search-chips li a {
     text-decoration: none;
-    background: #363f47;
-    color: white;
     padding: 3px 10px;
     margin: 5px;
     border-radius: 16px;
     font-weight: 200;
     font-size: 14px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+    vertical-align: top;
+    background: #383a6d;
+    color: white;
 }
 
 /*ListContent*/
 .ListBlock .ListContent {
-    height: calc(100% - 100px);
+    height: calc(100% - 105px);
+}
+
+.ListBlock .ListContent .List {
+    padding-bottom: 20px;
+}
+
+.ListBlock .ListContent .List .ListBookItem:first-child {
+    margin-top: 0;
 }
 
 /*AppContent*/
 .AppContent {
-    display: table-cell;
-    background: white;
+    background: #f9f9ff;
     vertical-align: top;
+    display: inline-block;
+    width: calc(100% - 470px);
+    height: 100%;
+    padding: 30px;
+}
+
+.AppContent:hover {
+    overflow-y: overlay;
+}
+
+/*BookView*/
+.BookView .block-view:first-child {
+    margin-top: 0;
+}
+
+.BookView .block-view {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+    vertical-align: top;
+    background: white;
+    color: #383a6d;
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 6px;
+}
+
+.BookView .block-view .image-book {
+    border-radius: 6px;
+    vertical-align: top;
+    position: relative;
+    display: inline-block;
+    width: 210px;
+    height: 320px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.BookView .block-view.block-book .data-block {
+    display: inline-block;
+    width: calc(100% - 210px);
+    padding: 0 0 0 30px;
+}
+
+.BookView .block-view .title {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+
+.BookView .block-book {
+    padding: 0;
+}
+
+.BookView .block-book .block-book-data {
+    padding: 30px;
+}
+
+.BookView .block-book .name {
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+
+.BookView .block-book .author {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.BookView .block-book .data {
+    padding: 0;
+    margin: 0;
+}
+
+.BookView .block-book .data li {
+    display: table;
+    width: 100%;
+    padding-top: 15px;
+}
+
+.BookView .block-book .data li strong {
+    display: table-cell;
+    min-width: 150px;
+}
+
+.BookView .block-book .data li span {
+    display: table-cell;
+    width: 100%;
+}
+
+.BookView .block-book .block-user {
+    padding: 20px 30px;
+    background: #f7f7ff;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.BookView .block-book .block-user .image-user {
+    border-radius: 50%;
+    vertical-align: top;
+    position: relative;
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.BookView .block-book .block-user .data-block {
+    display: inline-block;
+    width: calc(100% - 50px);
+    padding: 0 0 0 20px;
+}
+
+.BookView .block-book .block-user .title {
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.BookView .block-book .block-user .desc {
+    font-size: 13px;
+    padding-bottom: 5px;
 }

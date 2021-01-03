@@ -12,9 +12,6 @@ function List() {
             <ListBookItem/>
             <ListBookItem/>
             <ListBookItem/>
-            <ListBookItem/>
-            <ListBookItem/>
-            <ListBookItem/>
         </div>
     );
 }
