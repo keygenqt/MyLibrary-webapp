@@ -1,8 +1,8 @@
 let images = [
-    'https://api.mylibraryapp.com/images/fb53ecef-2318-434a-99f0-e6723c112f2d.png',
-    'https://api.mylibraryapp.com/images/a1d5583b-55a6-4952-a32d-5fcb18e39da5.png',
-    'https://api.mylibraryapp.com/images/567e5a6e-b11c-41d1-8bee-250ff3f72c99.png',
-    'https://api.mylibraryapp.com/images/9bd61984-8819-4093-9014-8b494dc24886.png',
+    'https://api.mylibraryapp.com/images/5ff2de42aebd0.png',
+    'https://api.mylibraryapp.com/images/5ff2f200f32a9.png',
+    'https://api.mylibraryapp.com/images/5ff305e745e4e.png',
+    'https://api.mylibraryapp.com/images/5ff3109c09f20.png',
 ]
 
 function ListBookItem() {
