@@ -7,4 +7,4 @@ Find a rare book among users MyLibrary.
 
 **It's desktop part - [Electron](https://www.electronjs.org/) + [React](https://reactjs.org/)**
 
-![picture](data/preview260121.png)
+![picture](data/preview26.png)
